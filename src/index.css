@@ -1,0 +1,36 @@
+/* Add here you favorite fonts */
+@import url('//fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+    text-rendering: geometricPrecision;
+    -webkit-font-smoothing: subpixel-antialiased;
+    font-feature-settings: 'rlig' 1, 'calt' 1, 'ss01' 1;
+  }
+  
+body {
+    @apply bg-white text-gray-800 dark:bg-black-500 dark:text-gray-300;
+}
+
+
+@layer components {
+    .SubHeading {
+        @apply text-lg font-normal text-gray-500 dark:text-gray-400
+            lg:text-xl lg:leading-[2.2rem];
+    }
+
+    .Button {
+        @apply flex items-center justify-center
+            rounded-md font-normal outline-none transition-colors focus:ring-2;
+    }
+
+    .Button.GradientButton {
+        @apply flex justify-center !bg-gradient-to-r from-primary-400
+            to-primary-600 text-center text-white transition-all
+            hover:to-primary-700 hover:shadow-lg hover:shadow-primary-600
+            hover:shadow-primary-500/40 active:from-primary-500 md:h-auto md:w-auto;
+      }
+}
